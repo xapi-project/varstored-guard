@@ -1,7 +1,8 @@
 [Unit]
 Description=Varstored XAPI socket deprivileging daemon
 Documentation=man:varstored-guard(1)
-After=message-switch.service syslog.target
+Requires=guefi-get-hw-keys.service
+After=message-switch.service syslog.target guefi-get-hw-keys.service
 Before=xenopsd.service
 Wants=message-switch.service syslog.target
 
